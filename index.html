@@ -31,9 +31,12 @@ body { font-family:'Outfit',sans-serif; background:var(--bg); color:var(--text);
 
 /* NAV */
 header {
-  position:sticky; top:0; z-index:90;
-  background:rgba(8,8,8,0.92); backdrop-filter:blur(24px);
-  border-bottom:1px solid var(--border);
+  position: sticky;
+  top: env(safe-area-inset-top);
+  z-index: 90;
+  background: rgba(8,8,8,0.92);
+  backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
 }
 .nav-wrap {
   max-width:1440px; margin:0 auto;
