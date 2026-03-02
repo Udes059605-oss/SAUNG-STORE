@@ -586,7 +586,7 @@ ${itemLines}
 
 ──────────────────────
 💰 *Total Belanja: ${fmt(subtotal)}*
-   _(belum termasuk ongkir)_
+   _(Gratis Ongkir)_
 
 ──────────────────────
 👤 *DATA PEMBELI:*
