@@ -540,7 +540,7 @@ function buyWA(id) {
   openCheckout();
 }
 
-function sendToWA() {
+async function sendToWA() {
   const nama      = document.getElementById('ckNama').value.trim();
   const noWa      = document.getElementById('ckWa').value.trim();
   const provinsi  = document.getElementById('ckProvinsi');
@@ -557,7 +557,6 @@ function sendToWA() {
   const kecText  = kecamatan.options[kecamatan.selectedIndex]?.text || '';
   const kelText  = kelurahan.options[kelurahan.selectedIndex]?.text || '';
 
-  // Validasi
   if (!nama)            { showToast('⚠️ Nama lengkap wajib diisi!'); return; }
   if (!noWa)            { showToast('⚠️ Nomor WhatsApp wajib diisi!'); return; }
   if (!provinsi.value)  { showToast('⚠️ Pilih Provinsi dulu!'); return; }
@@ -568,11 +567,33 @@ function sendToWA() {
   if (!kurir)           { showToast('⚠️ Pilih jasa pengiriman!'); return; }
   if (!selectedPay)     { showToast('⚠️ Pilih metode pembayaran!'); return; }
 
+  const alamatLengkap = `${alamat}, ${kelText}, ${kecText}, ${kabText}, ${provText}${pos ? ', ' + pos : ''}`;
+  const subtotal = cart.reduce((s, c) => s + c.price * c.qty, 0);
+
+  // Simpan ke database
+  try {
+    for (const c of cart) {
+      await fetch('https://saung-store-backend-production.up.railway.app/orders', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nama_pembeli: nama,
+          nomor_hp: noWa,
+          alamat: alamatLengkap,
+          produk_id: c.id,
+          jumlah: c.qty,
+          total_harga: c.price * c.qty
+        })
+      });
+    }
+    showToast('✅ Pesanan tersimpan!');
+  } catch (e) {
+    console.error('Gagal simpan order:', e);
+  }
+
   const itemLines = cart.map(c =>
     `┌ 🛍️ *${c.name}*\n│ Kategori : ${c.cat}\n│ Harga    : ${fmt(c.price)}\n│ Jumlah   : ${c.qty} pcs\n└ Subtotal : *${fmt(c.price * c.qty)}*`
   ).join('\n\n');
-
-  const subtotal = cart.reduce((s, c) => s + c.price * c.qty, 0);
 
   const msg =
 `╔══════════════════════╗
@@ -603,8 +624,8 @@ ${itemLines}
 ${note ? `\n📝 *Catatan:* ${note}` : ''}
 
 ──────────────────────
-Mohon konfirmasi ketersediaan & total ongkir.
-Terima kasih Kak ${NAMA_ADMIN}! 🙏`;
+
+Terima kasih Kak Sudah Checkout Di ${NAMA_TOKO}! 🙏`;
 
   openWA(msg);
   closeCheckout();
