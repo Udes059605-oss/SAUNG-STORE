@@ -1,6 +1,5 @@
 /* ═══════════════════════════════════════════
-   SAUNG STOR — script.js (Fullstack Edition)
-   Produk diambil dari database Supabase
+   SAUNG STORE
 ═══════════════════════════════════════════ */
 
 const SUPABASE_URL = 'https://ityybmkjyjizxyvpabza.supabase.co';
