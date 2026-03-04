@@ -297,5 +297,14 @@
 ═══════════════════════════════ -->
 <script src="script.js?v=4"></script>
 
+  <script>
+  console.log('TEST: script loaded');
+  setTimeout(()=>{
+    const g = document.getElementById('productsGrid');
+    alert('Grid: ' + (g ? 'ADA' : 'TIDAK ADA') + ' | Produk: ' + (typeof loadProducts));
+  }, 1000);
+</script>
+<script src="script.js?v=5"></script>
+
 </body>
 </html>
