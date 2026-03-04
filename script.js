@@ -340,7 +340,7 @@ function sendToWA(){
   if(!kelurahan.value){showToast('⚠️ Pilih Kelurahan/Desa dulu!');return;}
   if(!alamat){showToast('⚠️ Detail alamat wajib diisi!');return;}
   if(!kurir){showToast('⚠️ Pilih jasa pengiriman!');return;}
-  const itemLines=cart.map(c=>`┌ 🛍️ *${c.name}*\n│ Kategori : ${c.cat}\n│ Harga    : ${fmt(c.price)}\n│ Jumlah   : ${c.qty} pcs\n└ Subtotal : *${fmt(c.price*c.qty)}*`).join('\n\n');
+  
   const subtotal=cart.reduce((s,c)=>s+c.price*c.qty,0);
   const itemLines=cart.map(c=>{
     const extraInfo = [c._selectedUkuran?`Ukuran: ${c._selectedUkuran}`:'', c._selectedWarna?`Warna: ${c._selectedWarna}`:''].filter(Boolean).join(', ');
