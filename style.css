@@ -1648,3 +1648,15 @@ footer {
   }
 
 }
+
+/* ── PILIHAN UKURAN & WARNA ── */
+.m-options { margin-bottom: 14px; }
+.m-opt-label { font-size: 12px; letter-spacing: 1.5px; color: #a09080; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+.m-opt-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt-btn {
+  padding: 7px 16px; border-radius: 8px; border: 1.5px solid rgba(200,169,110,0.3);
+  background: transparent; color: #e8e0d4; font-size: 13px; font-weight: 500;
+  cursor: pointer; transition: all .2s; font-family: 'Outfit', sans-serif;
+}
+.opt-btn:hover { border-color: #c8a96e; color: #c8a96e; }
+.opt-btn.active { background: #c8a96e; border-color: #c8a96e; color: #000; font-weight: 700; }
