@@ -374,7 +374,6 @@ document.addEventListener('DOMContentLoaded',()=>{
   document.getElementById('ckProvinsi').addEventListener('change',loadKabupaten);
   document.getElementById('ckKabupaten').addEventListener('change',loadKecamatan);
   document.getElementById('ckKecamatan').addEventListener('change',loadKelurahan);
-  });
   updateCart();
   loadProvinsi();
   loadProducts();
