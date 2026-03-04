@@ -1660,3 +1660,42 @@ footer {
 }
 .opt-btn:hover { border-color: #c8a96e; color: #c8a96e; }
 .opt-btn.active { background: #c8a96e; border-color: #c8a96e; color: #000; font-weight: 700; }
+
+/* ── SEARCH & SORT BAR ── */
+.search-sort-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 0 4px;
+}
+.search-sort-bar input {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(200,169,110,0.2);
+  border-radius: 12px;
+  padding: 10px 16px;
+  color: #e8e0d4;
+  font-size: 14px;
+  font-family: 'Outfit', sans-serif;
+  outline: none;
+  transition: border-color .2s;
+}
+.search-sort-bar input:focus {
+  border-color: #c8a96e;
+}
+.search-sort-bar select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(200,169,110,0.2);
+  border-radius: 12px;
+  padding: 10px 14px;
+  color: #e8e0d4;
+  font-size: 13px;
+  font-family: 'Outfit', sans-serif;
+  outline: none;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.search-sort-bar select:focus {
+  border-color: #c8a96e;
+}
+
