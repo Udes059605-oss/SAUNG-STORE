@@ -45,8 +45,19 @@ let sortOrder = 'default';
 /* ── LOAD PRODUK DARI SUPABASE ── */
 async function loadProducts() {
   const grid = document.getElementById('productsGrid');
-  grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px;color:#7a7068;"><div style="font-size:32px;margin-bottom:12px;">⏳</div><div>Memuat produk...</div></div>`;
-  try {
+  grid.innerHTML = `<div class="skeleton-grid" style="grid-column:1/-1;">
+  ${Array(4).fill(`
+    <div class="skeleton-card">
+      <div class="skeleton-img"></div>
+      <div class="skeleton-body">
+        <div class="skeleton-line short"></div>
+        <div class="skeleton-line medium"></div>
+        <div class="skeleton-line full"></div>
+        <div class="skeleton-line price"></div>
+      </div>
+    </div>
+  `).join('')}
+</div>`;
     const data = await sbFetch('products?select=*&order=id.asc');
     PRODUCTS = data.map(p => ({
       id: p.id, cat: p.cat, badge: p.badge,
