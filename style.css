@@ -1699,3 +1699,30 @@ footer {
   border-color: #c8a96e;
 }
 
+/* ── REVIEWS ── */
+.m-reviews-section { margin-top: 8px; }
+.m-rev-title { font-size: 14px; font-weight: 700; color: #c8a96e; margin-bottom: 12px; }
+.rev-item { padding: 12px 0; border-bottom: 1px solid rgba(200,169,110,0.1); }
+.rev-header { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+.rev-nama { font-size: 13px; font-weight: 600; color: #e8e0d4; }
+.rev-stars { color: #c8a96e; font-size: 13px; }
+.rev-tgl { font-size: 11px; color: #7a7068; margin-left: auto; }
+.rev-komentar { font-size: 13px; color: #a09080; line-height: 1.5; }
+.m-rev-form { margin-top: 16px; background: rgba(255,255,255,0.03); border-radius: 12px; padding: 14px; }
+.m-rev-form-title { font-size: 13px; font-weight: 600; color: #c8a96e; margin-bottom: 10px; }
+.m-rev-form input, .m-rev-form textarea {
+  width: 100%; background: rgba(255,255,255,0.05); border: 1px solid rgba(200,169,110,0.2);
+  border-radius: 8px; padding: 10px 12px; color: #e8e0d4; font-size: 13px;
+  font-family: 'Outfit', sans-serif; outline: none; margin-bottom: 10px;
+}
+.m-rev-form textarea { height: 80px; resize: none; }
+.rev-stars-wrap { display: flex; gap: 6px; margin-bottom: 10px; }
+.rev-star { font-size: 24px; color: #3a3530; cursor: pointer; transition: color .15s; }
+.rev-star.active { color: #c8a96e; }
+.btn-rev-submit {
+  width: 100%; padding: 10px; border-radius: 8px;
+  background: linear-gradient(135deg,#c8a96e,#e8c87a);
+  border: none; color: #000; font-weight: 700; font-size: 13px;
+  cursor: pointer; font-family: 'Outfit', sans-serif;
+}
+
