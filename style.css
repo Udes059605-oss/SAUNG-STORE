@@ -1788,3 +1788,107 @@ footer {
   100% { background-position: -200% 0; }
 }
 
+TOMBOL JADI SELLER DI NAVBAR ── */
+.btn-jadi-seller {
+  display: flex; align-items: center; gap: 6px;
+  padding: 8px 16px; border-radius: 10px;
+  border: 1.5px solid rgba(200,169,110,0.4);
+  color: #c8a96e; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.5px; text-decoration: none;
+  transition: all .2s; white-space: nowrap;
+}
+.btn-jadi-seller:hover {
+  background: rgba(200,169,110,0.1);
+  border-color: #c8a96e;
+}
+
+/* ── SECTION BUKA TOKO ── */
+.seller-section {
+  padding: 60px 24px;
+  background: linear-gradient(135deg, #0d0d0d 0%, #111108 50%, #0d0d0d 100%);
+  border-top: 1px solid rgba(200,169,110,0.1);
+  border-bottom: 1px solid rgba(200,169,110,0.1);
+}
+.seller-inner {
+  max-width: 900px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 40px; align-items: center;
+}
+.seller-badge {
+  display: inline-flex; align-items: center;
+  background: rgba(200,169,110,0.08);
+  border: 1px solid rgba(200,169,110,0.2);
+  border-radius: 100px; padding: 5px 14px;
+  font-size: 11px; letter-spacing: 2px;
+  color: #c8a96e; text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.seller-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 700; line-height: 1.2;
+  margin-bottom: 14px; color: #e8e0d4;
+}
+.seller-title span {
+  background: linear-gradient(90deg, #c8a96e, #f0d890);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.seller-desc {
+  font-size: 14px; color: #7a7068;
+  line-height: 1.7; margin-bottom: 20px;
+}
+.seller-perks { margin-bottom: 24px; }
+.seller-perk {
+  font-size: 13px; color: #a09080;
+  padding: 5px 0; border-bottom: 1px solid rgba(200,169,110,0.06);
+}
+.seller-perk:last-child { border-bottom: none; }
+.seller-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-seller-daftar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 13px 24px; border-radius: 12px;
+  background: linear-gradient(135deg, #c8a96e, #e8c87a, #a07030);
+  color: #000; font-size: 13px; font-weight: 700;
+  letter-spacing: 1px; text-decoration: none;
+  transition: all .3s;
+}
+.btn-seller-daftar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(200,169,110,0.3);
+}
+.btn-seller-pelajari {
+  display: flex; align-items: center;
+  padding: 13px 20px; border-radius: 12px;
+  border: 1px solid rgba(200,169,110,0.3);
+  color: #c8a96e; font-size: 13px;
+  text-decoration: none; transition: all .2s;
+}
+.btn-seller-pelajari:hover {
+  border-color: #c8a96e;
+  background: rgba(200,169,110,0.06);
+}
+.seller-stats-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.seller-stat {
+  background: #101010;
+  border: 1px solid rgba(200,169,110,0.12);
+  border-radius: 16px; padding: 20px 16px;
+  text-align: center; transition: border-color .3s;
+}
+.seller-stat:hover { border-color: rgba(200,169,110,0.3); }
+.seller-stat-icon { font-size: 24px; margin-bottom: 8px; }
+.seller-stat-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 700;
+  color: #c8a96e; margin-bottom: 4px;
+}
+.seller-stat-lbl { font-size: 11px; color: #7a7068; }
+
+@media (max-width: 640px) {
+  .seller-inner { grid-template-columns: 1fr; gap: 32px; }
+  .seller-right { display: none; }
+}
+
