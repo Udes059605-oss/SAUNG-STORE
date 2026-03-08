@@ -1901,3 +1901,10 @@ TOMBOL JADI SELLER DI NAVBAR ── */
   white-space: nowrap !important;
 }
 
+.btn-jadi-seller {
+  background: rgba(200,169,110,0.08) !important;
+  color: #c8a96e !important;
+  border: 1.5px solid rgba(200,169,110,0.4) !important;
+  text-decoration: none !important;
+}
+
