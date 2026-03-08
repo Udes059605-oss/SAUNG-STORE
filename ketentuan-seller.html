@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ketentuan Seller — SAUNG STORE</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #c8a96e;
+    --gold-lt: #e8d5aa;
+    --gold-dk: #a07030;
+    --bg: #080808;
+    --bg2: #101010;
+    --bg3: #181818;
+    --border: rgba(200,169,110,0.12);
+    --border2: rgba(200,169,110,0.28);
+    --text: #e8e0d4;
+    --muted: #7a7068;
+    --muted2: #a09080;
+    --red: #e05252;
+    --green: #25D366;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── BACKGROUND ── */
+  .bg-glow {
+    position: fixed; inset: 0; pointer-events: none; z-index: 0;
+    background:
+      radial-gradient(ellipse 60% 40% at 20% 20%, rgba(200,169,110,0.04) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 80% 80%, rgba(200,169,110,0.03) 0%, transparent 70%);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(8,8,8,0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex; align-items: center; gap: 16px;
+  }
+  .header-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 700; letter-spacing: 3px;
+    background: linear-gradient(90deg, #c8a96e, #f0d890, #c8a96e);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .header-sep { width: 1px; height: 20px; background: var(--border2); }
+  .header-title { font-size: 13px; color: var(--muted2); letter-spacing: 1px; }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative; z-index: 1;
+    padding: 60px 24px 40px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(200,169,110,0.08);
+    border: 1px solid rgba(200,169,110,0.2);
+    border-radius: 100px; padding: 6px 16px;
+    font-size: 11px; letter-spacing: 2px; color: var(--gold);
+    text-transform: uppercase; margin-bottom: 20px;
+  }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 8vw, 52px);
+    font-weight: 700; line-height: 1.1;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #e8e0d4 0%, #c8a96e 50%, #e8e0d4 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 15px; color: var(--muted2); max-width: 500px;
+    margin: 0 auto; line-height: 1.6;
+  }
+
+  /* ── SUMMARY CARDS ── */
+  .summary {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 12px; padding: 32px 24px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sum-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 16px 12px;
+    text-align: center;
+    transition: border-color .3s;
+  }
+  .sum-card:hover { border-color: var(--border2); }
+  .sum-icon { font-size: 24px; margin-bottom: 8px; }
+  .sum-val {
+    font-size: 20px; font-weight: 700; color: var(--gold);
+    font-family: 'Cormorant Garamond', serif;
+    margin-bottom: 4px;
+  }
+  .sum-label { font-size: 11px; color: var(--muted); letter-spacing: 0.5px; }
+
+  /* ── CONTENT ── */
+  .content {
+    position: relative; z-index: 1;
+    max-width: 700px; margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  .section {
+    margin-bottom: 32px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: border-color .3s;
+    animation: fadeUp .5s ease both;
+  }
+  .section:hover { border-color: var(--border2); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .section:nth-child(1) { animation-delay: .1s; }
+  .section:nth-child(2) { animation-delay: .15s; }
+  .section:nth-child(3) { animation-delay: .2s; }
+  .section:nth-child(4) { animation-delay: .25s; }
+  .section:nth-child(5) { animation-delay: .3s; }
+  .section:nth-child(6) { animation-delay: .35s; }
+  .section:nth-child(7) { animation-delay: .4s; }
+  .section:nth-child(8) { animation-delay: .45s; }
+
+  .section-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 20px;
+    background: rgba(200,169,110,0.04);
+    border-bottom: 1px solid var(--border);
+  }
+  .section-num {
+    width: 28px; height: 28px; border-radius: 8px;
+    background: linear-gradient(135deg, #c8a96e, #a07030);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: #000;
+    flex-shrink: 0;
+  }
+  .section-title {
+    font-size: 13px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--gold-lt);
+  }
+  .section-body { padding: 18px 20px; }
+  .section-body p {
+    font-size: 14px; color: var(--muted2);
+    line-height: 1.7; margin-bottom: 10px;
+  }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  /* highlight box */
+  .highlight {
+    background: rgba(200,169,110,0.06);
+    border: 1px solid rgba(200,169,110,0.15);
+    border-radius: 10px; padding: 14px 16px;
+    margin: 12px 0;
+  }
+  .highlight-row {
+    display: flex; justify-content: space-between;
+    align-items: center; padding: 6px 0;
+    border-bottom: 1px solid rgba(200,169,110,0.08);
+    font-size: 13px;
+  }
+  .highlight-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .highlight-row span:first-child { color: var(--muted2); }
+  .highlight-row span:last-child { color: var(--gold); font-weight: 600; }
+
+  /* warning box */
+  .warning {
+    background: rgba(224,82,82,0.06);
+    border: 1px solid rgba(224,82,82,0.2);
+    border-radius: 10px; padding: 14px 16px;
+    margin: 12px 0;
+  }
+  .warning-title {
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 1px; color: var(--red);
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .warning ul { padding-left: 16px; }
+  .warning ul li {
+    font-size: 13px; color: #c07070;
+    line-height: 1.7; margin-bottom: 4px;
+  }
+
+  /* success box */
+  .success {
+    background: rgba(37,211,102,0.05);
+    border: 1px solid rgba(37,211,102,0.15);
+    border-radius: 10px; padding: 14px 16px;
+    margin: 12px 0;
+  }
+  .success ul { padding-left: 16px; }
+  .success ul li {
+    font-size: 13px; color: #70c090;
+    line-height: 1.7; margin-bottom: 4px;
+  }
+
+  /* ── AGREEMENT ── */
+  .agreement {
+    position: relative; z-index: 1;
+    max-width: 700px; margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+  .agreement-box {
+    background: var(--bg2);
+    border: 1px solid var(--border2);
+    border-radius: 20px; padding: 28px 24px;
+    animation: fadeUp .5s .5s ease both;
+  }
+  .agreement-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 700;
+    color: var(--gold-lt); margin-bottom: 8px;
+    text-align: center;
+  }
+  .agreement-sub {
+    font-size: 13px; color: var(--muted);
+    text-align: center; margin-bottom: 24px;
+    line-height: 1.6;
+  }
+
+  .checkbox-wrap {
+    display: flex; gap: 14px; align-items: flex-start;
+    background: rgba(200,169,110,0.04);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px;
+    margin-bottom: 16px; cursor: pointer;
+    transition: border-color .2s;
+  }
+  .checkbox-wrap:hover { border-color: var(--border2); }
+  .checkbox-wrap input[type="checkbox"] {
+    width: 20px; height: 20px; flex-shrink: 0;
+    accent-color: var(--gold); cursor: pointer;
+    margin-top: 2px;
+  }
+  .checkbox-text {
+    font-size: 13px; color: var(--muted2);
+    line-height: 1.6;
+  }
+  .checkbox-text strong { color: var(--text); }
+
+  .btn-agree {
+    width: 100%; height: 56px; border-radius: 14px;
+    background: linear-gradient(135deg, #c8a96e, #e8c87a, #a07030);
+    border: none; color: #000;
+    font-size: 14px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    cursor: pointer; transition: all .3s;
+    font-family: 'Outfit', sans-serif;
+    opacity: 0.4; pointer-events: none;
+    margin-bottom: 12px;
+  }
+  .btn-agree.active {
+    opacity: 1; pointer-events: all;
+  }
+  .btn-agree.active:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(200,169,110,0.3);
+  }
+  .btn-back {
+    width: 100%; height: 48px; border-radius: 14px;
+    background: transparent;
+    border: 1px solid var(--border2);
+    color: var(--muted2); font-size: 13px;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer; transition: all .2s;
+  }
+  .btn-back:hover { border-color: var(--gold); color: var(--gold); }
+
+  .agree-note {
+    text-align: center; font-size: 11px;
+    color: var(--muted); margin-top: 16px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-glow"></div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-logo">SAUNG STORE</div>
+  <div class="header-sep"></div>
+  <div class="header-title">Ketentuan Seller</div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">📋 Dokumen Resmi</div>
+  <div class="hero-title">Ketentuan & Kebijakan<br>Seller</div>
+  <div class="hero-sub">Baca dan pahami seluruh ketentuan berikut sebelum mendaftarkan toko Anda di Saung Store</div>
+</div>
+
+<!-- SUMMARY -->
+<div class="summary">
+  <div class="sum-card">
+    <div class="sum-icon">💰</div>
+    <div class="sum-val">10%</div>
+    <div class="sum-label">Komisi/Transaksi</div>
+  </div>
+  <div class="sum-card">
+    <div class="sum-icon">🏦</div>
+    <div class="sum-val">Rp 2.500</div>
+    <div class="sum-label">Biaya Cairkan</div>
+  </div>
+  <div class="sum-card">
+    <div class="sum-icon">📅</div>
+    <div class="sum-val">2x</div>
+    <div class="sum-label">Cairkan/Minggu</div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div class="section-title">Komisi Penjualan</div>
+    </div>
+    <div class="section-body">
+      <p>Setiap transaksi yang berhasil dikenakan komisi yang dipotong otomatis oleh sistem sebelum saldo masuk ke dashboard seller.</p>
+      <div class="highlight">
+        <div class="highlight-row">
+          <span>Komisi Saung Store</span>
+          <span>10% per transaksi</span>
+        </div>
+        <div class="highlight-row">
+          <span>Biaya Payment Gateway</span>
+          <span>~2% per transaksi</span>
+        </div>
+        <div class="highlight-row">
+          <span>Saldo bersih seller</span>
+          <span>~88% dari harga jual</span>
+        </div>
+      </div>
+      <p>Contoh: Produk dijual Rp 100.000 → saldo masuk ke seller Rp 88.000</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <div class="section-title">Biaya & Jadwal Pencairan</div>
+    </div>
+    <div class="section-body">
+      <p>Seller dapat mengajukan pencairan saldo kapan saja sesuai jadwal yang ditentukan.</p>
+      <div class="highlight">
+        <div class="highlight-row">
+          <span>Biaya pencairan</span>
+          <span>Rp 2.500 / penarikan</span>
+        </div>
+        <div class="highlight-row">
+          <span>Minimum pencairan</span>
+          <span>Rp 50.000</span>
+        </div>
+        <div class="highlight-row">
+          <span>Jadwal pencairan</span>
+          <span>Senin & Kamis</span>
+        </div>
+        <div class="highlight-row">
+          <span>Proses transfer</span>
+          <span>1x24 jam kerja</span>
+        </div>
+      </div>
+      <p>Biaya pencairan bersifat flat — tidak berubah berapapun nominal yang dicairkan.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div class="section-title">Verifikasi Identitas</div>
+    </div>
+    <div class="section-body">
+      <p>Demi keamanan seluruh pengguna platform, setiap seller wajib melakukan verifikasi identitas sebelum toko aktif.</p>
+      <div class="success">
+        <ul>
+          <li>Foto KTP asli yang masih berlaku</li>
+          <li>Foto selfie memegang KTP</li>
+          <li>Nomor rekening bank aktif atas nama sendiri</li>
+          <li>Nomor WhatsApp aktif untuk verifikasi</li>
+        </ul>
+      </div>
+      <p>Toko baru dapat aktif setelah proses verifikasi disetujui oleh tim Saung Store dalam 1x24 jam.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div class="section-title">Larangan Produk</div>
+    </div>
+    <div class="section-body">
+      <p>Seller bertanggung jawab penuh atas setiap produk yang dijual. Produk berikut <strong>dilarang keras</strong> dijual di platform Saung Store:</p>
+      <div class="warning">
+        <div class="warning-title">⛔ Produk Terlarang</div>
+        <ul>
+          <li>Produk ilegal atau melanggar hukum</li>
+          <li>Produk palsu / KW tanpa keterangan jelas</li>
+          <li>Produk tanpa izin edar resmi</li>
+          <li>Produk berbahaya bagi kesehatan & keselamatan</li>
+          <li>Produk yang melanggar hak cipta / hak merek</li>
+          <li>Konten dewasa / tidak senonoh</li>
+        </ul>
+      </div>
+      <p>Pelanggaran akan berakibat pembekuan toko permanen dan penahanan saldo hingga proses investigasi selesai.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div class="section-title">Tanggung Jawab Seller</div>
+    </div>
+    <div class="section-body">
+      <p>Seller bertanggung jawab penuh atas:</p>
+      <div class="success">
+        <ul>
+          <li>Keakuratan informasi produk (deskripsi, foto, harga)</li>
+          <li>Ketersediaan stok yang dijual</li>
+          <li>Pengiriman barang tepat waktu sesuai estimasi</li>
+          <li>Kualitas produk sesuai yang dijanjikan</li>
+          <li>Merespon komplain pembeli dengan baik</li>
+        </ul>
+      </div>
+      <p>Saung Store tidak bertanggung jawab atas klaim produk yang tidak sesuai dengan deskripsi seller.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div class="section-title">Sistem Peringatan</div>
+    </div>
+    <div class="section-body">
+      <p>Saung Store menerapkan sistem peringatan bertahap untuk menjaga kualitas platform:</p>
+      <div class="highlight">
+        <div class="highlight-row">
+          <span>Peringatan 1</span>
+          <span>Teguran tertulis</span>
+        </div>
+        <div class="highlight-row">
+          <span>Peringatan 2</span>
+          <span>Suspend 7 hari</span>
+        </div>
+        <div class="highlight-row">
+          <span>Peringatan 3</span>
+          <span>Pembekuan permanen</span>
+        </div>
+      </div>
+      <p>Pelanggaran berat (produk ilegal, penipuan) langsung dikenakan pembekuan permanen tanpa peringatan.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <div class="section-title">Privasi & Keamanan Data</div>
+    </div>
+    <div class="section-body">
+      <p>Saung Store berkomitmen menjaga keamanan data seller:</p>
+      <div class="success">
+        <ul>
+          <li>Data KTP disimpan terenkripsi & tidak disebarkan</li>
+          <li>Informasi rekening bank hanya digunakan untuk pencairan</li>
+          <li>Data seller tidak dijual ke pihak ketiga manapun</li>
+          <li>Seller berhak meminta penghapusan data saat berhenti berjualan</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <div class="section-title">Perubahan Ketentuan</div>
+    </div>
+    <div class="section-body">
+      <p>Saung Store berhak mengubah ketentuan ini sewaktu-waktu. Perubahan akan diberitahukan melalui:</p>
+      <div class="highlight">
+        <div class="highlight-row">
+          <span>Notifikasi WhatsApp</span>
+          <span>H-7 sebelum berlaku</span>
+        </div>
+        <div class="highlight-row">
+          <span>Pengumuman di dashboard</span>
+          <span>H-7 sebelum berlaku</span>
+        </div>
+      </div>
+      <p>Dengan tetap berjualan setelah perubahan berlaku, seller dianggap menyetujui ketentuan baru.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- AGREEMENT -->
+<div class="agreement">
+  <div class="agreement-box">
+    <div class="agreement-title">Persetujuan Seller</div>
+    <div class="agreement-sub">Centang pernyataan di bawah untuk melanjutkan pendaftaran toko Anda</div>
+
+    <label class="checkbox-wrap">
+      <input type="checkbox" id="check1" onchange="checkAll()">
+      <div class="checkbox-text">
+        Saya telah <strong>membaca dan memahami</strong> seluruh ketentuan seller Saung Store di atas
+      </div>
+    </label>
+
+    <label class="checkbox-wrap">
+      <input type="checkbox" id="check2" onchange="checkAll()">
+      <div class="checkbox-text">
+        Saya <strong>menyetujui</strong> potongan komisi 10% per transaksi dan biaya pencairan Rp 2.500 per penarikan
+      </div>
+    </label>
+
+    <label class="checkbox-wrap">
+      <input type="checkbox" id="check3" onchange="checkAll()">
+      <div class="checkbox-text">
+        Saya <strong>bertanggung jawab penuh</strong> atas seluruh produk yang saya jual dan tidak akan menjual produk terlarang
+      </div>
+    </label>
+
+    <label class="checkbox-wrap">
+      <input type="checkbox" id="check4" onchange="checkAll()">
+      <div class="checkbox-text">
+        Saya <strong>menyetujui</strong> bahwa data identitas saya akan diverifikasi oleh tim Saung Store
+      </div>
+    </label>
+
+    <button class="btn-agree" id="btnAgree" onclick="lanjutDaftar()">
+      ✦ Setuju & Lanjut Daftar
+    </button>
+    <button class="btn-back" onclick="history.back()">← Kembali</button>
+
+    <div class="agree-note">
+      Dengan mendaftar, seller dianggap telah menyetujui seluruh ketentuan yang berlaku.<br>
+      Terakhir diperbarui: Maret 2026
+    </div>
+  </div>
+</div>
+
+<script>
+function checkAll() {
+  const c1 = document.getElementById('check1').checked;
+  const c2 = document.getElementById('check2').checked;
+  const c3 = document.getElementById('check3').checked;
+  const c4 = document.getElementById('check4').checked;
+  const btn = document.getElementById('btnAgree');
+  if(c1 && c2 && c3 && c4) btn.classList.add('active');
+  else btn.classList.remove('active');
+}
+
+function lanjutDaftar() {
+  // Nanti diarahkan ke halaman daftar seller
+  alert('Fitur pendaftaran seller akan segera tersedia!');
+}
+</script>
+
+</body>
+</html>
