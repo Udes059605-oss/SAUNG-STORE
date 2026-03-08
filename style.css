@@ -1892,3 +1892,12 @@ TOMBOL JADI SELLER DI NAVBAR ── */
   .seller-right { display: none; }
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-jadi-seller {
+  white-space: nowrap !important;
+}
+
