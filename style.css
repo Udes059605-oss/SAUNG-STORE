@@ -1941,3 +1941,19 @@ TOMBOL JADI SELLER DI NAVBAR ── */
   left:120%;
 }
 
+/* ── MODERN FOCUS EFFECT ── */
+*:focus { outline: none; }
+
+.btn-jadi-seller:focus-visible {
+  box-shadow: 0 0 0 2px rgba(200,169,110,0.6);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(200,169,110,0.5);
+}
+
