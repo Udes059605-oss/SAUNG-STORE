@@ -364,6 +364,16 @@ header {
   display: block;
 }
 
+/* untuk mobile */
+@media (max-width: 768px) {
+  .hero-stats {
+    position: static;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 16px;
+  }
+}
+
 /* ══════════════════════════════
    FILTER KATEGORI
 ══════════════════════════════ */
